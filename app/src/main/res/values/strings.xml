@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SolarSystem</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_search">Search on Google !</string>
+    <string name="text_switch_grid">Show as Grid</string>
+    <string name="text_velocity_distance_format">Velocity %1$d Km/s , %2$d Million Km from Sun</string>
+</resources>
