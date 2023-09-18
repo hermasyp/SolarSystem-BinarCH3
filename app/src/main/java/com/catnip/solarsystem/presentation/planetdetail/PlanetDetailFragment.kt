@@ -33,6 +33,38 @@ class PlanetDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setClickListener()
+        showPlanetData()
+    }
+
+
+    private fun showPlanetData() {
+        planet?.let { p ->
+            binding.apply {
+                ivPlanet.load(p.imgUrl){
+                    crossfade(true)
+                }
+                tvPlanetName.text = p.name
+                tvPlanetVelocityDistance.text =
+                    getString(R.string.text_velocity_distance_format, p.velocity, p.distanceFromSun)
+                tvPlanetDesc.apply {
+                    text = p.desc
+                    movementMethod = ScrollingMovementMethod()
+                }
+            }
+        }
+    }
+
+    private fun setClickListener() {
+        binding.btnSearch.setOnClickListener {
+            navigateToGoogleSearch()
+        }
+    }
+
+    private fun navigateToGoogleSearch() {
+        val intent = Intent(Intent.ACTION_WEB_SEARCH)
+        intent.putExtra(SearchManager.QUERY, planet?.name)
+        startActivity(intent)
     }
 
 }

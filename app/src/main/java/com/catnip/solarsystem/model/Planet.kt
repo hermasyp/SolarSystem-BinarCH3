@@ -10,7 +10,6 @@ Github : https://github.com/hermasyp
  **/
 @Parcelize
 data class Planet(
-    val id: String = UUID.randomUUID().toString(),
     val position : Int,
     val name: String,
     val imgUrl: String,
